@@ -86,14 +86,48 @@ img {
   margin: 0;
 }
 .container {
-  max-width: 1158px;
-  padding: 0 15px;
-
+  /* basic style mobile */
+  min-width: 320px;
+  max-width: 428px;
+  padding: 0 16px;
   margin: 0 auto;
+
+  outline: 2px solid red;
 }
-.section {
+
+/* Tablet screen */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+/* Desktop screen */
+@media only screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
+}
+
+/* .section {
   padding-bottom: 188px;
   padding-top: 188px;
+} */
+.section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media only screen and (min-width: 768px) {
+  .section {
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
 }
 
 /* HIDDEN PATTERN */
@@ -392,30 +426,54 @@ img {
   |============================
 */
 
-.strengths-section {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
 .section-title {
   /* text */
-  font-style: normal;
   font-weight: 700;
   font-size: 36px;
-  line-height: 1.1;
+  line-height: 1.11;
   text-align: center;
   letter-spacing: 0.02em;
   text-transform: capitalize;
 
+  margin-bottom: 72px;
+
   color: var(--secondary-text-color);
 }
 
-/**
-  |============================
-  | icons
-  |============================
-*/
-.benefits-icon {
+.benefits-list {
   display: flex;
+  justify-content: space-around;
+  gap: 24px;
+}
+
+.our-strengths {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 72px;
+}
+@media only screen and (min-width: 768px) {
+  .our-strengths {
+    row-gap: 72px;
+    column-gap: 24px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .our-strengths {
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+}
+.strengths-item {
+}
+
+@media only screen and (min-width: 768px) {
+  .strengths-item {
+    flex-basis: calc((100% - 24px * 1) / 2);
+  }
+}
+
+.benefits-icon {
+  display: none;
   align-items: center;
   justify-content: center;
 
@@ -427,32 +485,57 @@ img {
 
   margin-bottom: 8px;
 }
-.benefits-list {
-  display: flex;
-  justify-content: space-around;
-  gap: 24px;
-}
-.skills-icon {
+
+@media only screen and (min-width: 1158px) {
+  .benefits-icon {
+    display: flex;
+  }
 }
 
-.our-strengths {
-  display: flex;
-  gap: 24px;
-}
-.strengths-item {
+.skills-icon {
 }
 
 .section-subtitle {
   /* text */
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
+
+  text-align: center;
+  text-transform: capitalize;
 
   margin-bottom: 8px;
 
   color: var(--secondary-text-color);
+}
+
+@media only screen and (min-width: 1158px) {
+  .section-subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+.section-text {
+  /* text */
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+
+  color: var(--primary-color);
+}
+@media only screen and (min-width: 768px) {
+  .section-text {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .section-text {
+    font-size: 16px;
+    font-weight: 400;
+  }
 }
 
 /**
@@ -461,27 +544,23 @@ img {
   |============================
 */
 .features-section {
+  display: none;
   padding-bottom: 120px;
+}
+
+@media only screen and (min-width: 1158px) {
+  .features-section {
+    display: block;
+  }
 }
 .features-list {
   display: flex;
 
   gap: 24px;
 }
-.features-container .section-title {
-  margin-bottom: 72px;
-}
+
 .features-list .features-item {
   border: 1px solid #e7e9fc;
-}
-
-.section-text {
-  /* text */
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-
-  color: var(--primary-color);
 }
 
 /**
@@ -490,15 +569,50 @@ img {
   |============================
 */
 
-.team-info {
-  display: flex;
-  gap: 24px;
+.section-team {
+  background-color: var(--team-section-bg-color);
 }
 .team-container .section-title {
-  margin-bottom: 72px;
+  /* margin-bottom: 72px; */
 }
+.team-info {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 72px;
+}
+@media only screen and (min-width: 768px) {
+  .team-info {
+    column-gap: 24px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .team-info {
+    gap: 24px;
+  }
+}
+.team-list {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: var(--primary-bg-color);
+
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+@media only screen and (min-width: 1158px) {
+  .team-list {
+    flex-basis: calc((100% - 72px) / 4);
+  }
+}
+
 .team-list .section-subtitle {
-  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
 }
 
 .team-img {
@@ -509,26 +623,12 @@ img {
   text-align: center;
   padding: 32px 0;
 }
-
-.section-team {
-  padding-top: 120px;
-  padding-bottom: 120px;
-  background-color: var(--team-section-bg-color);
-}
-.team-list {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
+.text-container .section-text {
+  font-weight: 400;
+  font-size: 16px;
   text-align: center;
-
-  width: calc((100% - 72px) / 4);
-  background-color: var(--primary-bg-color);
-
-  border-radius: 0px 0px 4px 4px;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+
 /* SOCIAL-LINKS-ICONS footer */
 .social-icon-container {
 }
@@ -540,10 +640,6 @@ img {
   gap: 24px;
 }
 .social-links .icon-list {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-
   width: 40px;
   height: 40px;
 }
@@ -574,21 +670,35 @@ img {
   | our CUSTOMERS
   |============================
 */
-.customers-section {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-.customers-section .section-title {
-  margin-bottom: 72px;
-}
+
 .customer-list {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
   justify-content: center;
+
+  gap: 72px 16px;
+}
+@media only screen and (min-width: 768px) {
+  .customer-list {
+    gap: 72px 24px;
+  }
 }
 .customer-item {
-  width: calc((100% - 120px) / 6);
+  flex-basis: calc((100% - 16px) / 2);
   height: 88px;
+}
+
+@media only screen and (min-width: 768px) {
+  .customer-item {
+    flex-basis: calc((100% - 48px) / 3);
+    max-width: 168px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .customer-item {
+    flex-basis: calc((100% - 120px) / 6);
+  }
 }
 
 .customers-link {
