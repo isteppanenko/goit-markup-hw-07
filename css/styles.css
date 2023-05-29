@@ -120,8 +120,8 @@ img {
 
 @media only screen and (min-width: 1158px) {
   .section {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 188px;
+    padding-bottom: 188px;
   }
 }
 
@@ -262,20 +262,18 @@ img {
 }
 @media only screen and (min-width: 768px) {
   .header-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: end;
+    display: block;
 
-    row-gap: 12px;
-
-    margin-top: 16px;
-    margin-bottom: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 }
 @media only screen and (min-width: 1158px) {
   .header-list {
     display: flex;
     gap: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
@@ -292,6 +290,27 @@ img {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media only screen and (min-width: 768px) {
+  .header-contacts-list .header-contact-link {
+    font-size: 12px;
+    line-height: 1.17;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .header-contacts-list .header-contact-link {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+.header-distance:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+@media only screen and (min-width: 1158px) {
+  .header-distance:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
 .header-contacts-list a {
   display: block;
 
@@ -847,6 +866,9 @@ img {
 
   color: var(--secondary-text-color);
 }
+.strengths-item .section-subtitle {
+  text-align: start;
+}
 
 @media only screen and (min-width: 1158px) {
   .section-subtitle {
@@ -918,8 +940,8 @@ img {
 }
 @media only screen and (min-width: 768px) {
   .team-info {
+    justify-content: center;
     column-gap: 24px;
-    margin-left: 108px;
   }
 }
 @media only screen and (min-width: 1158px) {
@@ -1041,8 +1063,7 @@ img {
 @media only screen and (min-width: 768px) {
   .customer-list {
     gap: 72px 24px;
-    justify-content: flex-start;
-    margin-left: 108px;
+    justify-content: center;
   }
 }
 @media only screen and (min-width: 1158px) {
