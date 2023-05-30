@@ -1139,6 +1139,20 @@ img {
     margin-right: 120px;
   }
 }
+
+.tab-container {
+  max-width: 552px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 1158px) {
+  .tab-container {
+    max-width: inherit;
+    margin-left: inherit;
+    margin-right: inherit;
+  }
+}
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -1152,7 +1166,6 @@ img {
 @media only screen and (min-width: 768px) {
   .footer-content {
     justify-content: start;
-    margin-left: 108px;
   }
 }
 
